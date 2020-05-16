@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      # MYSQL_DATABASE: test_db
+      # MYSQL_USER: devuser
+      # MYSQL_PASSWORD: devpass
+    ports:
+      - "4000:3306"
+    volumes:
+     - /home/soumya/Desktop/Project/Project/CookThisNotThat_create.sql:/docker-entrypoint-initdb.d/create.sql
+
+  web:
+    build: .
+    container_name: CookThisNotThat_web
+    depends_on:
+      - db
+    volumes:
+      - /var/www/html/SE_PROJ:/var/www/html/
+    ports:
+      - "4001:80"
+    stdin_open: true
+    tty: true
