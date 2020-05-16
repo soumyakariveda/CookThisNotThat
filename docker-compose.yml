@@ -11,8 +11,7 @@ services:
     ports:
       - "4000:3306"
     volumes:
-     - /home/soumya/Desktop/Project/Project/CookThisNotThat_create.sql:/docker-entrypoint-initdb.d/create.sql
-
+     - /home/soumya/Desktop/CookThisNotThat/CookThisNotThat_create.sql:/docker-entrypoint-initdb.d/create.sql
   web:
     build: .
     container_name: CookThisNotThat_web
