@@ -9,7 +9,7 @@
     <?php
     $servername = "db";
     $username = "root";
-    $password = "password";
+    $password = "";
     $dbname = "CookThisNotThatDB";
     $conn = mysqli_connect($servername, $username, $password, $dbname);
     $sql1 = "SELECT name,ingredient_id FROM Ingredients";
